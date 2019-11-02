@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 const ejsLayouts = require('express-ejs-layouts');
@@ -17,6 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', homeRoute);
 
-app.listen(3000, () => console.log("server started......"));
+app.listen(process.env.PORT, () => console.log("server started......"));
 
 
