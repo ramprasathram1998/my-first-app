@@ -30,6 +30,8 @@ router.post('/login', async (req, res) => {
   try {
     const userDetail = await getData(req.body);
 
+    console.log("user detail: ", userDetail);
+    // res.send(userDetail)
     res.redirect('/upload');
   }
   catch {
@@ -38,8 +40,9 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/upload', async (req, res) => {
+  console.log('query params', req)
   const { url } = req.query;
-  console.log(url);
+  console.log("URL=============",url);
 
   try {
     const fileName = await getImageToLocal(url);
