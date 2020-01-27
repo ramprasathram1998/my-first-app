@@ -17,7 +17,7 @@ module.exports.putData = (data) => {
   client.query(currentQuery, (err, rows) => {
     if(err) console.log(err);
 
-    console.log(rows, fields);
+    console.log("USER DETAILS: ", rows)
   });
 }
 
